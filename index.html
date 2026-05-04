@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlgoQuest | Terminal Coding Puzzle</title>
+    <meta name="description" content="AlgoQuest — a hacker-themed terminal coding puzzle game. Solve JavaScript challenges to prove your skills.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="scanline"></div>
+    <div id="terminal">
+        <div id="terminal-header">
+            <div class="header-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+            </div>
+            <span class="header-title">ALGOQUEST v1.0 — SECURE TERMINAL</span>
+        </div>
+        <div id="output">
+            <p class="system">>> SYSTEM BOOT COMPLETE...</p>
+            <p class="system">>> WELCOME, AGENT. MISSION: ALGOQUEST.</p>
+            <p class="system">>> Type "help" for available commands.</p>
+        </div>
+        <div id="input-area">
+            <span class="prompt">agent@algoquest:~$</span>
+            <input type="text" id="user-input" autofocus autocomplete="off" spellcheck="false"
+                placeholder="Type your answer here...">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
