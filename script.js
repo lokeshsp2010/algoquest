@@ -1,14 +1,8 @@
-// ═══════════════════════════════════════════
-//  ALGOQUEST — Terminal Coding Puzzle Game
-//  Type the correct code to solve each level!
-// ═══════════════════════════════════════════
-
 const input = document.getElementById('user-input');
 const output = document.getElementById('output');
 
 let currentLevel = 1;
 
-// ── Level definitions ───────────────────────
 const levels = [
     {
         id: 1,
@@ -68,7 +62,7 @@ const levels = [
     }
 ];
 
-// ── Input listener ──────────────────────────
+
 input.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
         const val = input.value.trim();
@@ -78,7 +72,7 @@ input.addEventListener('keydown', (e) => {
     }
 });
 
-// ── Print text to the terminal ──────────────
+
 function printToTerminal(text, className = '') {
     const p = document.createElement('p');
     p.textContent = `> ${text}`;
@@ -87,7 +81,6 @@ function printToTerminal(text, className = '') {
     output.scrollTop = output.scrollHeight;
 }
 
-// ── Print with a typewriter delay effect ────
 function printDelayed(text, className = '', delayMs = 400) {
     return new Promise((resolve) => {
         setTimeout(() => {
@@ -97,11 +90,10 @@ function printDelayed(text, className = '', delayMs = 400) {
     });
 }
 
-// ── Show the current level prompt ───────────
 function showLevel(level) {
     const lvl = levels.find(l => l.id === level);
     if (!lvl) {
-        // All levels beaten!
+        
         showVictory();
         return;
     }
@@ -114,11 +106,10 @@ function showLevel(level) {
     });
 }
 
-// ── Process the user's command ──────────────
 function processCommand(cmd) {
     printToTerminal(cmd);
 
-    // Handle special commands
+    
     if (cmd.toLowerCase() === 'help') {
         printToTerminal('Available commands:', 'system');
         printToTerminal('  help    — Show this help message');
@@ -149,7 +140,7 @@ function processCommand(cmd) {
         return;
     }
 
-    // ── Check answer against current level ──
+   
     const lvl = levels.find(l => l.id === currentLevel);
     if (!lvl) {
         printToTerminal('All levels complete! Type "reset" to play again.', 'success');
@@ -157,12 +148,10 @@ function processCommand(cmd) {
     }
 
     if (lvl.answers.includes(cmd)) {
-        // Correct!
         printToTerminal(lvl.success, 'success');
         currentLevel++;
 
         if (currentLevel > levels.length) {
-            // Beat the game!
             showVictory();
         } else {
             printToTerminal(lvl.next, 'system');
@@ -171,19 +160,17 @@ function processCommand(cmd) {
             }, 800);
         }
     } else {
-        // Wrong answer
-        printToTerminal('✘ INCORRECT. Try again, Agent.', 'error');
+        printToTerminal(' INCORRECT. Try again, Agent.', 'error');
         printToTerminal('Type "help" for available commands.', 'system');
     }
 }
 
-// ── Victory screen ──────────────────────────
 async function showVictory() {
-    printToTerminal('=================================================', 'success');
+    printToTerminal('====================================================', 'success');
     await printDelayed('>> TRANSMISSION RECEIVED', 'system', 500);
     await printDelayed('>> AGENT STATUS: VERIFIED', 'system', 500);
     await printDelayed('', '', 300);
-    await printDelayed('██████  MISSION COMPLETE  ██████', 'success', 600);
+    await printDelayed('  MISSION COMPLETE ', 'success', 600);
     await printDelayed('', '', 200);
     await printDelayed('You have proven your knowledge of JavaScript.', 'success', 400);
     await printDelayed('AlgoQuest Division welcomes you.', 'success', 400);
@@ -192,5 +179,4 @@ async function showVictory() {
     printToTerminal('=================================================', 'success');
 }
 
-// ── Initialize on page load ─────────────────
 showLevel(currentLevel);
