@@ -1,15 +1,11 @@
-/* ═══════════════════════════════════════════
-   ALGOQUEST — Terminal Styling
-   ═══════════════════════════════════════════ */
 
-/* ── Reset ───────────────────────────────── */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* ── Body ────────────────────────────────── */
+
 body {
     background: #050a0f;
     background-image:
@@ -18,13 +14,13 @@ body {
     color: #00ff41;
     font-family: 'Fira Code', 'Courier New', Courier, monospace;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: centre;
+    align-items: centre;
     min-height: 100vh;
     overflow: hidden;
 }
 
-/* ── CRT scanline overlay ────────────────── */
+
 #scanline {
     position: fixed;
     inset: 0;
@@ -39,7 +35,7 @@ body {
     z-index: 100;
 }
 
-/* ── Terminal container ──────────────────── */
+
 #terminal {
     width: 90%;
     max-width: 780px;
@@ -62,10 +58,10 @@ body {
     100% { opacity: 1; transform: scale(1) translateY(0); }
 }
 
-/* ── Terminal header bar ─────────────────── */
+
 #terminal-header {
     display: flex;
-    align-items: center;
+    align-items: centre;
     padding: 10px 16px;
     background: #0a0f14;
     border-bottom: 1px solid #1a2a1a;
@@ -97,7 +93,7 @@ body {
     text-transform: uppercase;
 }
 
-/* ── Output area ─────────────────────────── */
+
 #output {
     flex: 1;
     padding: 20px;
@@ -131,7 +127,7 @@ body {
     100% { opacity: 1; transform: translateX(0); }
 }
 
-/* ── Text classes ────────────────────────── */
+
 .system {
     color: #586e75;
 }
@@ -146,10 +142,10 @@ body {
     text-shadow: 0 0 8px rgba(80, 250, 123, 0.3);
 }
 
-/* ── Input area ──────────────────────────── */
+
 #input-area {
     display: flex;
-    align-items: center;
+    align-items: centre;
     padding: 14px 20px;
     background: #0a0f14;
     border-top: 1px solid #1a2a1a;
@@ -181,8 +177,8 @@ body {
     font-style: italic;
 }
 
-/* ── Blinking cursor effect on focus ─────── */
-#user-input:focus {
+
+#user-input: focus {
     animation: cursorPulse 1s infinite;
 }
 
@@ -191,7 +187,7 @@ body {
     50% { border-right: 2px solid transparent; }
 }
 
-/* ── Responsive ──────────────────────────── */
+
 @media (max-width: 600px) {
     #terminal {
         width: 100%;
