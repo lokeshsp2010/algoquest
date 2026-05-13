@@ -9,7 +9,7 @@ const levels = [
         title: "LEVEL 1: The Logic Gate",
         prompt: "Fix the function to return 'true' when both inputs are equal.\nHint: Use a strict comparison operator on a and b.",
         answers: ["a === b", "a===b", "b === a", "b===a"],
-        success: "✔ CORRECT! Strict equality (===) checks both value AND type.",
+        success: "CORRECT! Strict equality (===) checks both value AND type.",
         next: "Initializing Level 2..."
     },
     {
@@ -24,16 +24,16 @@ const levels = [
             "for (let i = 0; i < 5; i++) {}",
             "for (let i = 0; i <= 4; i++) {}"
         ],
-        success: "✔ CORRECT! Loops let you repeat code efficiently.",
-        next: "Initializing Level 3..."
+        success: "CORRECT! Loops let you repeat code efficiently.",
+        next: "Initialising Level 3..."
     },
     {
         id: 3,
         title: "LEVEL 3: The Array Architect",
         prompt: "Create an array with the elements 1, 2, 3.\nHint: Use square brackets.",
         answers: ["[1, 2, 3]", "[1,2,3]"],
-        success: "✔ CORRECT! Arrays store ordered collections of data.",
-        next: "Initializing Level 4..."
+        success: "CORRECT! Arrays store ordered collections of data.",
+        next: "Initialising Level 4..."
     },
     {
         id: 4,
@@ -50,14 +50,14 @@ const levels = [
             "x => { return x * 2 }"
         ],
         success: "✔ CORRECT! Arrow functions are concise and powerful.",
-        next: "Initializing Level 5..."
+        next: "Initialising Level 5..."
     },
     {
         id: 5,
         title: "LEVEL 5: The Null Guard",
         prompt: "How do you check if a variable 'data' is null or undefined?\nHint: Use the equality operator that treats null and undefined as equal.",
         answers: ["data == null", "data==null", "null == data", "null==data"],
-        success: "✔ CORRECT! Loose equality (==) treats null and undefined as the same.",
+        success: "CORRECT! Loose equality (==) treats null and undefined as the same.",
         next: ">> FINAL TRANSMISSION INCOMING..."
     }
 ];
@@ -100,7 +100,7 @@ function showLevel(level) {
 
     printToTerminal('--------------------------------------------------');
     printToTerminal(lvl.title, 'system');
-    // Split multi-line prompts
+  
     lvl.prompt.split('\n').forEach(line => {
         printToTerminal(line);
     });
